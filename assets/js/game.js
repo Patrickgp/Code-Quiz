@@ -39,13 +39,28 @@ let questions = [
 ];
 
 const CORRECT_BONUS = 10;
+const INCORRECT = -10;
 const MAX_QUESTIONS = 3;
 
+timer = () => {
+    let sec = 99;
+    let timer = setInterval(function() {
+        document.getElementById('score').innerHTML = sec;
+        sec--;
+        if (sec < 0) {
+            clearInterval(timer);
+        }
+    }, 1000);
+}
+
+
 startGame = () => {
+    alert("Welcome to Code Quiz. \n\nEvery correct answer will add 10 seconds to your time. Every incorrect answer will dock you 10 seconds. \n\nYour total score is your remaining time out of 100 seconds. Good Luck!")
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
+    timer();
 };
 
 getNewQuestion = () => {
@@ -54,7 +69,6 @@ getNewQuestion = () => {
         return window.location.assign("/end.html")
     }
     questionCounter++;
-    // cannot set properties of null (setting 'innerText')
     questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
 
 
@@ -88,6 +102,10 @@ choices.forEach( choice => {
             incrementScore(CORRECT_BONUS);
         }
 
+        if(classToApply === 'incorrect') {
+            incrementScore(INCORRECT);
+        }
+
         selectedChoice.parentElement.classList.add(classToApply);
 
         setTimeout( () => {
@@ -97,10 +115,9 @@ choices.forEach( choice => {
     });
 });
 
-incrementScore = num => {
+incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
 };
-
 
 startGame();
