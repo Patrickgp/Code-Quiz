@@ -6,11 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Code Quiz High Score</title>
         <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/highscores.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&display=swap" rel="stylesheet">
     </head>
 <body>
-    
+    <div class="container">
+        <div id="highScores" class="flex-center flex-column">
+            <h1 id="finalScore">High Scores</h1>
+            <ul id="highScoresList"></ul>
+            <a href="/" class="btn">Go Home</a>
+        </div>
+    </div>
+
+    <script src="./assets/js/highscores.js"></script>
 </body>
 </html>
