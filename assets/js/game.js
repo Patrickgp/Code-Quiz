@@ -36,9 +36,33 @@ let questions = [
         choice4: "alert('Hello World');",
         answer: 4,
     },
+    {
+        question:" Which of the following is correct about features of JavaScript?",
+        choice1: 'JavaScript is complementary to and integrated with HTML',
+        choice2: "JavaScript is open and cross-platform",
+        choice3: "Both of the Above",
+        choice4: "JavaScript is never used and outdated",
+        answer: 3,
+    },
+    {
+        question: " Which of the following types of variables takes precendence over others if their names are the same?",
+        choice1: "Global Variables",
+        choice2: "Local Variables",
+        choice3: "Nearby Variables",
+        choice4: "Hidden Variables",
+        answer: 2,
+    },
+    {
+        question: " Which of the following function of Array object adds and/or removes elements from an array?",
+        choice1: "splice()",
+        choice2: "sort()",
+        choice3: "unshift",
+        choice4: "toSource()",
+        answer: 1,
+    },
 ];
 
-const maxQuestions = 3;
+const maxQuestions = 6;
 
 function timer () {
     let timer = setInterval(function () {
@@ -54,7 +78,7 @@ function timer () {
 }
 
 startGame = () => {
-    alert("Welcome to Code Quiz. \n\nEvery correct answer will add 10 sec to your time. Every incorrect answer will dock you 10 sec. \n\nYour total score is your remaining time out of 100 sec. Good Luck!")
+    alert("Welcome to Code Quiz. \n\nEvery correct answer will add 10 sec to your time. Every incorrect answer will dock you 10 sec. \n\nYour total score is your remaining time. Good Luck!")
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
@@ -102,14 +126,12 @@ choices.forEach( choice => {
             // incrementScore(timeAdd);
             sec = sec + 10;
             scoreText.innerHTML = sec;
-            timer();
         }
 
         if(classToApply === 'incorrect') {
             // incrementScore(timeSubtract);
             sec = sec - 10;
             scoreText.innerHTML = sec;
-            timer();
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
