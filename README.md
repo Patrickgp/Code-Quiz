@@ -7,8 +7,8 @@ The premise of this assignment was that as a coding boot camp student I wanted t
 Code Quiz Landing Page
 ![Screen Shot 2022-06-20 at 1 26 21 PM](https://user-images.githubusercontent.com/86730331/174653437-f3905e36-3912-4335-91bd-7095977799e7.png)
 
-Example of question
-![Screen Shot 2022-06-20 at 1 29 53 PM](https://user-images.githubusercontent.com/86730331/174653471-d5d82d05-1c5f-425a-a297-f031894de17f.png)
+Example of question and timer expiring
+![Screen Shot 2022-06-20 at 1 27 24 PM](https://user-images.githubusercontent.com/86730331/174654589-c8fbe2e7-25ab-492e-b303-1de9139fe2b5.png)
 
 Example of logged high scores
 ![Screen Shot 2022-06-20 at 1 29 04 PM](https://user-images.githubusercontent.com/86730331/174653479-f1779c7f-a806-459a-892c-5c16e7a5a291.png)
