@@ -8,10 +8,8 @@ Code Quiz Landing Page
 ![Screen Shot 2022-06-20 at 1 26 21 PM](https://user-images.githubusercontent.com/86730331/174653437-f3905e36-3912-4335-91bd-7095977799e7.png)
 
 Example of question
-![Screen Shot 2022-06-20 at 1 27 24 PM](https://user-images.githubusercontent.com/86730331/174653446-edd3f528-57b8-4cf6-847f-5c32768f8927.png)
-
-Example of logged high scores
 ![Screen Shot 2022-06-20 at 1 29 53 PM](https://user-images.githubusercontent.com/86730331/174653471-d5d82d05-1c5f-425a-a297-f031894de17f.png)
 
+Example of logged high scores
 ![Screen Shot 2022-06-20 at 1 29 04 PM](https://user-images.githubusercontent.com/86730331/174653479-f1779c7f-a806-459a-892c-5c16e7a5a291.png)
 <img width="1624" alt="Screen Shot 2022-06-20 at 1 30 45 PM" src="https://user-images.githubusercontent.com/86730331/174653483-f2d64016-6055-4632-97b6-0d8ed794292f.png">
