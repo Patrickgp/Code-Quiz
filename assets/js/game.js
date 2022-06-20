@@ -6,7 +6,7 @@ const scoreText = document.getElementById('score');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
-let score = 0;
+let sec = 99;
 let questionCounter = 0;
 let availableQuestions = [];
 
@@ -38,24 +38,23 @@ let questions = [
     },
 ];
 
-const CORRECT_BONUS = 10;
-const INCORRECT = -10;
-const MAX_QUESTIONS = 3;
+const maxQuestions = 3;
 
-timer = () => {
-    let sec = 99;
-    let timer = setInterval(function() {
+function timer () {
+    let timer = setInterval(function () {
         document.getElementById('score').innerHTML = sec;
         sec--;
         if (sec < 0) {
             clearInterval(timer);
+            alert("Quiz over, you ran out of time!");
+            localStorage.setItem('mostRecentScore', score);
+            return window.location.assign("end.html");
         }
     }, 1000);
 }
 
-
 startGame = () => {
-    alert("Welcome to Code Quiz. \n\nEvery correct answer will add 10 seconds to your time. Every incorrect answer will dock you 10 seconds. \n\nYour total score is your remaining time out of 100 seconds. Good Luck!")
+    alert("Welcome to Code Quiz. \n\nEvery correct answer will add 10 sec to your time. Every incorrect answer will dock you 10 sec. \n\nYour total score is your remaining time out of 100 sec. Good Luck!")
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
@@ -64,12 +63,12 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score);
+    if(availableQuestions.length === 0 || questionCounter >= maxQuestions) {
+        localStorage.setItem('mostRecentScore', sec);
         return window.location.assign("end.html")
     }
     questionCounter++;
-    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
+    questionCounterText.innerText = `${questionCounter}/${maxQuestions}`;
 
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -85,6 +84,7 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 };
 
+
 choices.forEach( choice => {
     choice.addEventListener('click', e =>{
         if (!acceptingAnswers) return;
@@ -99,11 +99,17 @@ choices.forEach( choice => {
         };
 
         if(classToApply === 'correct') {
-            incrementScore(CORRECT_BONUS);
+            // incrementScore(timeAdd);
+            sec = sec + 10;
+            scoreText.innerHTML = sec;
+            timer();
         }
 
         if(classToApply === 'incorrect') {
-            incrementScore(INCORRECT);
+            // incrementScore(timeSubtract);
+            sec = sec - 10;
+            scoreText.innerHTML = sec;
+            timer();
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
