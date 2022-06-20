@@ -3,14 +3,14 @@ const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+const highScores = JSON.parse(localStorage.getItem("highScores")) || []; // pull high scores from local storage
 
-const maxHighScores = 5;
+const maxHighScores = 5; // Maximum top players displayed set at 5
 
 finalScore.innerText = mostRecentScore;
 
 username.addEventListener('keyup', () => {
-    saveScoreBtn.disabled = !username.value;    
+    saveScoreBtn.disabled = !username.value;    //this will prevent user from saving high score with an empty username value.
 });
 
 saveHighScore = (e) => {

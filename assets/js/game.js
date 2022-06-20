@@ -63,7 +63,7 @@ let questions = [
 ];
 
 const maxQuestions = 6;
-
+//this function will control the timer element and display via innerHTML
 function timer () {
     let timer = setInterval(function () {
         document.getElementById('score').innerHTML = sec;
@@ -72,11 +72,11 @@ function timer () {
             clearInterval(timer);
             alert("Quiz over, you ran out of time!");
             localStorage.setItem('mostRecentScore', score);
-            return window.location.assign("end.html");
+            return window.location.assign("end.html"); // navigate user to end page to store high score or try again
         }
     }, 1000);
 }
-
+// this function will start the game 
 startGame = () => {
     alert("Welcome to Code Quiz. \n\nEvery correct answer will add 10 sec to your time. Every incorrect answer will dock you 10 sec. \n\nYour total score is your remaining time. Good Luck!")
     questionCounter = 0;
@@ -85,7 +85,7 @@ startGame = () => {
     getNewQuestion();
     timer();
 };
-
+// this function will cycle through questions randomly utilizing Math and dataset
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter >= maxQuestions) {
         localStorage.setItem('mostRecentScore', sec);
@@ -108,7 +108,7 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 };
 
-
+// this determines whether the selected answer was correct classToApply will apply classes to the selectedAnswer
 choices.forEach( choice => {
     choice.addEventListener('click', e =>{
         if (!acceptingAnswers) return;
@@ -139,7 +139,7 @@ choices.forEach( choice => {
         setTimeout( () => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
-        }, 1000);
+        }, 1000); //after the question is answered this will generate the next question after a 1 second pause.
     });
 });
 
