@@ -6,7 +6,7 @@ const scoreText = document.getElementById('score');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
-let sec = 99;
+let sec = 10;
 let questionCounter = 0;
 let availableQuestions = [];
 
