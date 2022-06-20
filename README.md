@@ -12,4 +12,6 @@ Example of question
 
 Example of logged high scores
 ![Screen Shot 2022-06-20 at 1 29 04 PM](https://user-images.githubusercontent.com/86730331/174653479-f1779c7f-a806-459a-892c-5c16e7a5a291.png)
+
+JavaScript file open in VS Code
 <img width="1624" alt="Screen Shot 2022-06-20 at 1 30 45 PM" src="https://user-images.githubusercontent.com/86730331/174653483-f2d64016-6055-4632-97b6-0d8ed794292f.png">
